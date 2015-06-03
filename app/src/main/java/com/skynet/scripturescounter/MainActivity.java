@@ -3,6 +3,7 @@ package com.skynet.scripturescounter;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
@@ -86,6 +87,9 @@ public class MainActivity extends AppCompatActivity
 
         ++_totalCount;
 
+        if(_currentCount%100 == 0 && _vibration)
+            vibrate();
+
         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit()
                 .putString(getString(R.string.pref_current_count), String.valueOf(_currentCount))
                 .putString(getString(R.string.pref_total_count), String.valueOf(_totalCount))
@@ -150,6 +154,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void vibrate(){
-
+        Vibrator v = (Vibrator)getSystemService(VIBRATOR_SERVICE);
+        v.vibrate(500);
     }
 }
