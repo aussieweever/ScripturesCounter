@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <PreferenceCategory
+        android:title="基本设置">
+        <CheckBoxPreference
+            android:key="@string/pref_vibration"
+            android:title="@string/title_vibration"
+            android:summary="@string/title_vibration_description"
+            android:defaultValue="true" />
+        <EditTextPreference
+            android:key="@string/pref_current_count"
+            android:title="@string/title_change_current"
+            android:inputType="number"
+            android:defaultValue="0" />
+
+        <EditTextPreference
+            android:key="@string/pref_total_count"
+            android:title="念经总数"
+            android:inputType="number"
+            android:defaultValue="0" />
+
+        <EditTextPreference
+            android:key="@string/pref_name"
+            android:title="更改经文名称"
+            android:defaultValue="默认经文" />
+    </PreferenceCategory>
+</PreferenceScreen>

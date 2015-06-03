@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">念经计数器</string>
+
+    <string name="action_settings">设置</string>
+    <string name="title_activity_setting_view">SettingViewActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+
+    <string name="title_vibration">震动提醒</string>
+    <string name="title_vibration_description">计数器每满100次的时候震动一次</string>
+
+    <string name="title_change_current">更改当前计数</string>
+    <string name="title_change_total">更改历史数据</string>
+
+    <!--<string name="pref_preference_name">COUNTERSETTINGS</string>-->
+    <string name="pref_vibration">VIBRATION</string>
+    <string name="pref_current_count">CURRENTCOUNTER</string>
+    <string name="pref_total_count">TOTALCOUNTER</string>
+    <string name="pref_name">NAME</string>
+</resources>
