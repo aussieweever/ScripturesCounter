@@ -5,11 +5,15 @@
     <string name="title_activity_setting_view">SettingViewActivity</string>
     <string name="title_activity_setting">SettingActivity</string>
 
+    <string name="title_setting_head">基本设置</string>
     <string name="title_vibration">震动提醒</string>
-    <string name="title_vibration_description">计数器每满100次的时候震动一次</string>
+    <string name="title_vibration_description">计数器每满1000次的时候震动一次</string>
 
     <string name="title_change_current">更改当前计数</string>
     <string name="title_change_total">更改历史数据</string>
+    <string name="title_default_name">默认经文</string>
+    <string name="title_change_default_name">更改经文名称</string>
+    <string name="title_total_count">念经总数</string>
 
     <!--<string name="pref_preference_name">COUNTERSETTINGS</string>-->
     <string name="pref_vibration">VIBRATION</string>

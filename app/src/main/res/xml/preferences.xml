@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
     <PreferenceCategory
-        android:title="基本设置">
+        android:title="@string/title_setting_head">
         <CheckBoxPreference
             android:key="@string/pref_vibration"
             android:title="@string/title_vibration"
@@ -17,13 +17,13 @@
 
         <EditTextPreference
             android:key="@string/pref_total_count"
-            android:title="念经总数"
+            android:title="@string/title_total_count"
             android:inputType="number"
             android:defaultValue="0" />
 
         <EditTextPreference
             android:key="@string/pref_name"
-            android:title="更改经文名称"
-            android:defaultValue="默认经文" />
+            android:title="@string/title_change_default_name"
+            android:defaultValue="@string/title_default_name" />
     </PreferenceCategory>
 </PreferenceScreen>

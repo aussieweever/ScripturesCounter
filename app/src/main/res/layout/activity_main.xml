@@ -8,28 +8,34 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="默认经文"
         android:id = "@+id/txtName"
         android:layout_centerHorizontal="true"
-        android:textSize="30dp"/>
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/txtCurrentCounter"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:gravity="center_horizontal"
-        android:textSize="60dp"
-        android:layout_below="@+id/txtName"/>
 
+        android:gravity="center"
+        android:textSize="120sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/txtLabel"
+        android:text="@string/title_total_count"
+
+        />
     <TextView
         android:id="@+id/txtTotalCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtCurrentCounter"
-        android:gravity="bottom"
-        android:textSize="30dp"
-        android:text="Test Total"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/txtLabel"
         />
 
 </RelativeLayout>

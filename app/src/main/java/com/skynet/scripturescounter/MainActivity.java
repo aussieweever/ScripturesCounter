@@ -19,8 +19,7 @@ import java.security.Key;
 public class MainActivity extends AppCompatActivity
         implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private final String DEFAULT_NAME = "默认经文";
-    private int _currentCount = 0;
+        private int _currentCount = 0;
     private long _totalCount = 0;
     private String _currentName = null;
     private boolean _vibration = true;
@@ -87,7 +86,8 @@ public class MainActivity extends AppCompatActivity
 
         ++_totalCount;
 
-        if(_currentCount%100 == 0 && _vibration)
+        //Vibrate every 1000 times
+        if(_currentCount%1000 == 0 && _vibration)
             vibrate();
 
         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit()
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity
 
 
         if(key.equals(getString(R.string.pref_name))){
-            showName(sharedPreferences.getString(key, DEFAULT_NAME));
+            showName(sharedPreferences.getString(key, getString(R.string.title_default_name)));
         }else if(key.equals(getString(R.string.pref_vibration))){
             _vibration = Boolean.valueOf(sharedPreferences.getString(key, "1"));
         }else {
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity
                 pres.getString(getString(R.string.pref_current_count), "0"));
         _totalCount = Long.valueOf(
                 pres.getString(getString(R.string.pref_total_count), "0"));
-        _currentName = pres.getString(getString(R.string.pref_name), DEFAULT_NAME);
+        _currentName = pres.getString(getString(R.string.pref_name), getString(R.string.title_default_name));
 
         _vibration = pres.getBoolean(getString(R.string.pref_vibration), true);
 
