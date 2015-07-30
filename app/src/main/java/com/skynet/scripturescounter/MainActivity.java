@@ -9,9 +9,12 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
 import java.security.Key;
 
@@ -19,10 +22,15 @@ import java.security.Key;
 public class MainActivity extends AppCompatActivity
         implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-        private int _currentCount = 0;
+    private int _currentCount = 0;
     private long _totalCount = 0;
     private String _currentName = null;
     private boolean _vibration = true;
+
+    private float x1;
+    private float y1;
+    private float x2;
+    private float y2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +77,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-
     public boolean onKeyUp(int keyCode, KeyEvent event){
         if(keyCode == KeyEvent.KEYCODE_VOLUME_DOWN || keyCode == KeyEvent.KEYCODE_VOLUME_UP){
             increaseCount();
@@ -78,7 +85,35 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void increaseCount(){
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
+        final int type = event.getActionMasked();
+
+        switch (type){
+
+            case MotionEvent.ACTION_DOWN:
+            {
+                x1 = event.getX();
+                y1 = event.getY();
+                break;
+            }
+            case MotionEvent.ACTION_UP:
+            {
+                x2 = event.getX();
+                y2 = event.getY();
+
+                double distance = Math.sqrt(Math.pow(Math.abs(x1-x2), 2) +
+                        Math.pow(Math.abs(y1-y2), 2));
+
+                if(distance > 250)
+                    increaseCount();
+            }
+
+        }
+        return true;
+    }
+
+    public void increaseCount(){
         if(_currentCount == 9999)
             _currentCount = 0;
         else
@@ -157,4 +192,5 @@ public class MainActivity extends AppCompatActivity
         Vibrator v = (Vibrator)getSystemService(VIBRATOR_SERVICE);
         v.vibrate(500);
     }
+
 }

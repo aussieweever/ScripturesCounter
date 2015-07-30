@@ -14,10 +14,14 @@
     <string name="title_default_name">默认经文</string>
     <string name="title_change_default_name">更改经文名称</string>
     <string name="title_total_count">念经总数</string>
+    <string name="action_increase">计数</string>
 
     <!--<string name="pref_preference_name">COUNTERSETTINGS</string>-->
     <string name="pref_vibration">VIBRATION</string>
     <string name="pref_current_count">CURRENTCOUNTER</string>
     <string name="pref_total_count">TOTALCOUNTER</string>
     <string name="pref_name">NAME</string>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
 </resources>
